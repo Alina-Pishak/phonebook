@@ -7,6 +7,6 @@ import { reducerAuth } from './auth/slice';
 export const reducer = combineReducers({
   contacts: reducerContact,
   filter: reducerFilter,
-  app: reducerApp,
   auth: reducerAuth,
+  app: reducerApp,
 });

@@ -2,11 +2,16 @@
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-background: rgb(215, 173, 244);
-background: linear-gradient(90deg, rgba(215, 173, 244, 1) 0%, rgba(201, 219, 255, 1) 50%, rgba(242, 128, 220, 1) 100%);}
+  background: rgb(215, 173, 244);
+  background: linear-gradient(90deg, rgba(215, 173, 244, 1) 0%, rgba(201, 219, 255, 1) 50%, rgba(242, 128, 220, 1) 100%);
+  
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
