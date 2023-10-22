@@ -6,5 +6,6 @@ export const handleRejected = state => {
   state.error = true;
 };
 export const handleFulfilled = state => {
+  state.error = false;
   state.isLoading = false;
 };
