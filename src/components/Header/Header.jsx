@@ -56,7 +56,6 @@ function Header() {
             <Button
               key={nanoid()}
               onClick={() => {
-                console.log('isAuth', isAuth);
                 isAuth ? dispatch(logoutUserThunk()) : navigate('/login');
               }}
               sx={{
