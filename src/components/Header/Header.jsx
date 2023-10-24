@@ -90,8 +90,8 @@ function Header() {
               <MenuItem
                 key={nanoid()}
                 onClick={() => {
-                  navigate('/');
                   handleCloseNavMenu();
+                  navigate('/');
                 }}
               >
                 <Typography textAlign="center">Home</Typography>
@@ -99,8 +99,8 @@ function Header() {
               <MenuItem
                 key={nanoid()}
                 onClick={() => {
-                  navigate('contacts');
                   handleCloseNavMenu();
+                  navigate('contacts');
                 }}
               >
                 <Typography textAlign="center">Contacts</Typography>

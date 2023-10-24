@@ -66,6 +66,7 @@ const ContactListItem = ({ contacts }) => {
               number: contactNumber.value,
             };
             dispatch(updateContactThunk(newData));
+            setContactEditing(null);
           }}
           noValidate
           sx={{ mt: 1, display: 'flex', maxWidth: '300px', gap: '10px' }}
