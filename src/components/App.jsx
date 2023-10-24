@@ -2,7 +2,7 @@ import Layout from 'Layout/Layout';
 import PrivateRoutes from 'quards/PrivateRoutes/PrivateRoutes';
 import PublicRoutes from 'quards/PublicRoutes/PublicRoutes';
 import { Route, Routes } from 'react-router-dom';
-import { CircularProgress, ThemeProvider } from '@mui/material';
+import { Backdrop, CircularProgress, ThemeProvider } from '@mui/material';
 import { Loader } from './Loader/Loader';
 import { theme } from 'theme/theme';
 import Error from './Error/Error';
@@ -26,10 +26,12 @@ const App = () => {
       <Loader />
       <Suspense
         fallback={
-          <CircularProgress
-            color="inherit"
-            sx={{ position: 'absolute', left: '50%', top: '35%' }}
-          />
+          <Backdrop
+            sx={{ color: '#fff', zIndex: theme => theme.zIndex.drawer + 1 }}
+            open={true}
+          >
+            <CircularProgress color="inherit" />
+          </Backdrop>
         }
       >
         <Routes>
