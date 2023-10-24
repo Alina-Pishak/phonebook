@@ -12,6 +12,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const addContact = e => {
+    e.stopPropagation();
     e.preventDefault();
     const isTrue = contacts.some(contact => name === contact.name);
     if (isTrue) {

@@ -3,14 +3,10 @@ import { initialState } from './initialState';
 import {
   authUserThunk,
   createUserThunk,
-  getUserInfoThunk,
   logoutUserThunk,
+  refreshThunk,
 } from './thunks';
-import {
-  handleFulfilledAuthUser,
-  handleFulfilledGetUser,
-  handleFulfilledLogoutUser,
-} from './helpers';
+import { handleFulfilledAuthUser, handleFulfilledLogoutUser } from './helpers';
 
 const slice = createSlice({
   name: 'auth',
@@ -19,8 +15,8 @@ const slice = createSlice({
     builder
       .addCase(createUserThunk.fulfilled, handleFulfilledAuthUser)
       .addCase(authUserThunk.fulfilled, handleFulfilledAuthUser)
-      .addCase(logoutUserThunk.fulfilled, handleFulfilledLogoutUser)
-      .addCase(getUserInfoThunk.fulfilled, handleFulfilledGetUser);
+      .addCase(refreshThunk.fulfilled, handleFulfilledAuthUser)
+      .addCase(logoutUserThunk.fulfilled, handleFulfilledLogoutUser);
   },
 });
 

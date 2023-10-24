@@ -6,10 +6,6 @@ export const setToken = token => {
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 };
 
-export const deleteToken = () => {
-  delete axios.defaults.headers.common['Authorization'];
-};
-
 export const createUser = async data => {
   return (await axios.post('/users/signup', data)).data;
 };
@@ -22,9 +18,11 @@ export const authUser = async data => {
 
 export const logoutUser = async () => {
   return (await axios.post('/users/logout')).data;
-  // deleteToken();
 };
 
-export const getUserInfo = async () => {
-  return (await axios.get('/users/current')).data;
+export const refresh = async () => {
+  const token = JSON.parse(localStorage.getItem('persist:auth'));
+  if (!token?.token) return;
+  setToken(JSON.parse(token?.token));
+  return { token: JSON.parse(token?.token), user: JSON.parse(token?.user) };
 };

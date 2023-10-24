@@ -1,4 +1,4 @@
 export const initialState = {
-  token: '',
-  profile: null,
+  token: null,
+  user: null,
 };

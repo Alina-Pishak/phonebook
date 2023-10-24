@@ -1,13 +1,9 @@
 export const handleFulfilledAuthUser = (state, { payload }) => {
   state.token = payload.token;
-  state.profile = payload.user;
+  state.user = payload.user;
 };
 
 export const handleFulfilledLogoutUser = state => {
-  state.token = '';
-  state.profile = null;
-};
-
-export const handleFulfilledGetUser = (state, { payload }) => {
-  state.profile = payload;
+  state.token = null;
+  state.user = null;
 };
