@@ -22,7 +22,7 @@ export const logoutUser = async () => {
 
 export const refresh = async () => {
   const token = JSON.parse(localStorage.getItem('persist:auth'));
-  if (!token?.token) return;
+  if (!token) return;
   setToken(JSON.parse(token?.token));
   return { token: JSON.parse(token?.token), user: JSON.parse(token?.user) };
 };
