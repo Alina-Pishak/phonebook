@@ -7,7 +7,9 @@ export const setToken = token => {
 };
 
 export const createUser = async data => {
-  return (await axios.post('/users/signup', data)).data;
+  const resp = (await axios.post('/users/signup', data)).data;
+  setToken(resp.token);
+  return resp;
 };
 
 export const authUser = async data => {
